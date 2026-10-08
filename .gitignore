@@ -1,0 +1,35 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+# logs
+logs
+*.log
+install.log
+npm-debug.log*
+
+# editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# tanstack router generated tree is committed on purpose (see ARCHITECTURE.md)
+
+# playwright
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+
+# lighthouse raw runs (medians + reports are committed)
+/reports/lighthouse/raw/
+.vercel
+
+scripts

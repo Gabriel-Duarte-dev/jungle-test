@@ -1,0 +1,165 @@
+{
+  "environment": {
+    "generatedAt": "2026-10-06T23:59:08.658Z",
+    "node": "v24.11.1",
+    "platform": "win32 x64",
+    "lighthouse": "13.5.0",
+    "runsPerTarget": 3,
+    "targetScores": {
+      "performance": 90,
+      "accessibility": 95,
+      "best-practices": 95,
+      "seo": 90
+    }
+  },
+  "results": [
+    {
+      "target": "home",
+      "label": "Início",
+      "profile": "mobile",
+      "url": "http://localhost:4173/",
+      "medianScores": {
+        "performance": 93,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "medianMetrics": {
+        "lcpMs": 2962,
+        "cls": 0,
+        "tbtMs": 95
+      },
+      "runs": [
+        {
+          "performance": 90,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        },
+        {
+          "performance": 93,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        },
+        {
+          "performance": 93,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        }
+      ]
+    },
+    {
+      "target": "nft-detail",
+      "label": "Detalhes do NFT",
+      "profile": "mobile",
+      "url": "http://localhost:4173/nfts/emerald-ape-042",
+      "medianScores": {
+        "performance": 82,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "medianMetrics": {
+        "lcpMs": 4428,
+        "cls": 0,
+        "tbtMs": 140
+      },
+      "runs": [
+        {
+          "performance": 82,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        },
+        {
+          "performance": 82,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        },
+        {
+          "performance": 82,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        }
+      ]
+    },
+    {
+      "target": "home",
+      "label": "Início",
+      "profile": "desktop",
+      "url": "http://localhost:4173/",
+      "medianScores": {
+        "performance": 98,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "medianMetrics": {
+        "lcpMs": 1111,
+        "cls": 0.0055,
+        "tbtMs": 1
+      },
+      "runs": [
+        {
+          "performance": 98,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        },
+        {
+          "performance": 98,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        },
+        {
+          "performance": 98,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        }
+      ]
+    },
+    {
+      "target": "nft-detail",
+      "label": "Detalhes do NFT",
+      "profile": "desktop",
+      "url": "http://localhost:4173/nfts/emerald-ape-042",
+      "medianScores": {
+        "performance": 97,
+        "accessibility": 97,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "medianMetrics": {
+        "lcpMs": 1250,
+        "cls": 0.0156,
+        "tbtMs": 0
+      },
+      "runs": [
+        {
+          "performance": 98,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        },
+        {
+          "performance": 97,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        },
+        {
+          "performance": 97,
+          "accessibility": 97,
+          "best-practices": 100,
+          "seo": 100
+        }
+      ]
+    }
+  ]
+}

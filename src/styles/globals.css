@@ -1,0 +1,199 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 700;
+  src: url('/fonts/roboto-mono-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Roboto Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 700;
+  src: url('/fonts/roboto-mono-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@theme {
+  /* --- Palette (color/* in Figma) --- */
+  --color-ink: #140d0a;
+  --color-black: #000000;
+  --color-surface-card: #241612;
+  --color-surface-dark: #38220f;
+  --color-surface-raised: #2f1d15;
+  --color-border: #3f2319;
+  --color-border-soft: #55321f;
+  --color-primary: #d28a4c;
+  --color-secondary: #b39463;
+  --color-foreground: #f5f1eb;
+  --color-text-primary: #f7f3ec;
+  --color-text-secondary: #cfb28c;
+  --color-text-accent: #e89b55;
+  --color-text-coral: #f0805f;
+  --color-background-elevated: #fbfbfb;
+  --color-danger: var(--color-text-coral);
+  --color-success: var(--color-text-accent);
+  --color-warning: var(--color-primary);
+
+  /* --- Typography --- */
+  --font-mono: 'Roboto Mono', ui-monospace, 'Cascadia Mono', 'Segoe UI Mono', monospace;
+  --font-sans: var(--font-mono);
+
+  --text-tiny: 0.5625rem;
+  /* 9  — Tiny/9 Bold */
+  --text-tiny--line-height: 1;
+  --text-micro: 0.625rem;
+  /* 10 — Tiny/10 Medium */
+  --text-micro--line-height: 1;
+  --text-caption: 0.75rem;
+  /* 12 — Caption/12 */
+  --text-caption--line-height: 0.875rem;
+  --text-caption-lg: 0.8125rem;
+  /* 13 — Caption/13 */
+  --text-caption-lg--line-height: 1.375rem;
+  --text-body: 0.875rem;
+  /* 14 — Body/14 */
+  --text-body--line-height: 1.5rem;
+  --text-body-md: 0.9375rem;
+  /* 15 — Body/15 */
+  --text-body-md--line-height: 1rem;
+  --text-body-lg: 1rem;
+  /* 16 — Body Large/16 */
+  --text-body-lg--line-height: 1.25rem;
+  --text-body-xl: 1.0625rem;
+  /* 17 — Body Large/17 Bold */
+  --text-body-xl--line-height: 1rem;
+  --text-subtitle: 1.125rem;
+  /* 18 — Body Large/18 */
+  --text-subtitle--line-height: 1rem;
+  --text-title: 1.375rem;
+  /* 22 — Title/22 Regular */
+  --text-title--line-height: 1.8125rem;
+  --text-heading: 1.5rem;
+  /* 24 — Heading/24 Bold */
+  --text-heading--line-height: 2rem;
+  --text-section: 1.75rem;
+  /* 28 — Blog section header */
+  --text-section--line-height: 1.2;
+  --text-display: 2.6875rem;
+  /* 43 — Display/43 Bold */
+  --text-display--line-height: 4.375rem;
+
+  --tracking-wordmark: 0.1em;
+
+  /* --- Radii --- */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 15px;
+  --radius-xl: 18px;
+  --radius-2xl: 22px;
+  --radius-3xl: 24px;
+
+  /* --- Layout --- */
+  --container-shell: 1200px;
+
+  /* --- Motion --- */
+  --animate-shimmer: shimmer 1.6s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -150% 0;
+  }
+
+  to {
+    background-position: 250% 0;
+  }
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-ink);
+    color: var(--color-foreground);
+    font-family: var(--font-mono);
+    font-size: var(--text-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-text-accent);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+
+  img {
+    background-color: color-mix(in srgb, var(--color-surface-card) 70%, transparent);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@utility shell-padding {
+  padding-inline: 1.5rem;
+
+  @media (width >=48rem) {
+    padding-inline: 2.5rem;
+  }
+
+  @media (width >=64rem) {
+    padding-inline: 4rem;
+  }
+
+  @media (width >=90rem) {
+    padding-inline: 120px;
+  }
+}
+
+@utility skeleton-shimmer {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-surface-card) 0%,
+    color-mix(in srgb, var(--color-border-soft) 65%, var(--color-surface-card)) 50%,
+    var(--color-surface-card) 100%
+  );
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    background-image: none;
+    background-color: var(--color-surface-card);
+  }
+}

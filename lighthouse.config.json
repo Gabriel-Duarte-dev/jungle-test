@@ -1,0 +1,54 @@
+{
+  "note": "Versioned audit configuration consumed by scripts/lighthouse.mjs. Runs execute against the optimized build (npm run preview) with the default mock scenario so the audited pages load the real artwork, fonts and data flows.",
+  "previewUrl": "http://localhost:4173",
+  "runsPerTarget": 3,
+  "categories": ["performance", "accessibility", "best-practices", "seo"],
+  "targets": [
+    { "id": "home", "path": "/", "label": "Início" },
+    { "id": "nft-detail", "path": "/nfts/emerald-ape-042", "label": "Detalhes do NFT" }
+  ],
+  "profiles": {
+    "mobile": {
+      "formFactor": "mobile",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 412,
+        "height": 823,
+        "deviceScaleFactor": 1.75,
+        "disabled": false
+      },
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 562.5,
+        "downloadThroughputKbps": 1474.56,
+        "uploadThroughputKbps": 675,
+        "cpuSlowdownMultiplier": 4
+      }
+    },
+    "desktop": {
+      "formFactor": "desktop",
+      "screenEmulation": {
+        "mobile": false,
+        "width": 1350,
+        "height": 940,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "throttling": {
+        "rttMs": 40,
+        "throughputKbps": 10240,
+        "requestLatencyMs": 0,
+        "downloadThroughputKbps": 0,
+        "uploadThroughputKbps": 0,
+        "cpuSlowdownMultiplier": 1
+      }
+    }
+  },
+  "targetScores": {
+    "performance": 90,
+    "accessibility": 95,
+    "best-practices": 95,
+    "seo": 90
+  }
+}
