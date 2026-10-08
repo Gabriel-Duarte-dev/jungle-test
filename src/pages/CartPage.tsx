@@ -61,39 +61,37 @@ export function CartPage() {
   return (
     <QuoteProvider>
       <ScreenBackBar title="Carrinho de NFTs" to="/" hash="catalogo" />
-      <div
-        className={`${PAGE} grid gap-10 py-0 pb-112 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end lg:py-0 lg:pb-10`}
-      >
-        <div className="flex flex-col gap-4">
-          <Breadcrumb
-            items={[
-              { label: 'Início', to: '/' },
-              { label: 'Mercado', to: '/', hash: 'catalogo' },
-              { label: 'Carrinho' },
-            ]}
-          />
-          {changed && (
-            <div
-              role="status"
-              className="border-warning/40 text-caption text-warning rounded-sm border p-3"
+      <div className={`${PAGE} py-0 pb-112 lg:pb-10`}>
+        <Breadcrumb
+          items={[
+            { label: 'Início', to: '/' },
+            { label: 'Mercado', to: '/', hash: 'catalogo' },
+            { label: 'Carrinho' },
+          ]}
+        />
+        {changed && (
+          <div
+            role="status"
+            className="border-warning/40 text-caption text-warning mb-4 rounded-sm border p-3"
+          >
+            Alguns preços mudaram enquanto o carrinho estava aberto.
+            <Button
+              type="button"
+              size="sm"
+              variant="ghost"
+              className="ml-2"
+              onClick={() => ack.mutate()}
             >
-              Alguns preços mudaram enquanto o carrinho estava aberto.
-              <Button
-                type="button"
-                size="sm"
-                variant="ghost"
-                className="ml-2"
-                onClick={() => ack.mutate()}
-              >
-                Entendi
-              </Button>
-            </div>
-          )}
-
+              Entendi
+            </Button>
+          </div>
+        )}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-start">
+        <div className="flex flex-col gap-4">
           {desktop ? (
-            <table className="w-full border-separate border-spacing-y-2">
+            <table className="w-full border-separate border-spacing-y-2.5">
               <thead>
-                <tr className="text-caption text-text-secondary text-left font-bold tracking-wide uppercase">
+                <tr className="text-caption text-text-primary text-left font-bold tracking-wide uppercase">
                   <th className="border-primary/20 w-[42%] border-b pb-4">NFTs</th>
                   <th className="border-primary/20 border-b pb-4">Preço</th>
                   <th className="border-primary/20 border-b pb-4">Edições</th>
@@ -118,11 +116,8 @@ export function CartPage() {
           )}
         </div>
 
-        {desktop && (
-          <div>
-            <CartSummary />
-          </div>
-        )}
+        {desktop && <CartSummary />}
+        </div>
       </div>
 
       {desktop && <CartRelated nftId={items[0]?.nft.id} />}

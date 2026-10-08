@@ -15,7 +15,7 @@ export function CartSummary({ variant = 'desktop' }: { variant?: 'desktop' | 'mo
   return (
     <aside className="flex flex-col gap-4 rounded-md">
       {variant === 'desktop' && (
-        <h2 className="text-text-primary border-primary/20 border-b pb-3 text-[16px] font-bold">
+        <h2 className="text-text-primary border-primary/20 border-b pb-4 text-[16px] font-bold">
           Resumo da carteira
         </h2>
       )}
