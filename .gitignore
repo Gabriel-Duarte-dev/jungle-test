@@ -32,4 +32,5 @@ npm-debug.log*
 /reports/lighthouse/raw/
 .vercel
 
+.env
 scripts
